@@ -35,11 +35,80 @@ header {
   font-size: 40px;
   letter-spacing: .5px; }
 
+section:first-child {
+  margin-top: 80px; }
+
+section.landing-screen {
+  margin-top: 20px; }
+  section.landing-screen .thumbnail {
+    width: 100px;
+    height: 100px;
+    background: #f3f3f3;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: auto; }
+  section.landing-screen h1 {
+    font-size: 48px;
+    font-weight: 900; }
+  section.landing-screen .btn-contact-me {
+    border-radius: 30px;
+    width: 180px;
+    padding: 15px;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase; }
+
+section.services-section {
+  margin: 80px auto; }
+
 section .small-title {
   color: #007bff;
   font-weight: bold; }
 
 section .section-title {
+  font-weight: 900; }
+
+section h4 {
   font-weight: 700; }
+
+section p.desc {
+  font-weight: 400;
+  font-size: 16px; }
+
+section .serial {
+  display: block;
+  color: #4f07ff;
+  font-weight: bold;
+  font-size: 16px; }
+
+section .technology {
+  display: block;
+  font-size: 20px;
+  font-weight: 700; }
+
+section .promise-slogan {
+  display: block;
+  font-size: 20px;
+  color: grey; }
+
+.about-me .profile-thumbnail {
+  width: 250px;
+  height: 250px;
+  border-radius: 125px;
+  overflow: hidden;
+  margin: 0px auto 30px;
+  background: #f3f3f3; }
+
+.about-me p {
+  text-align: justify;
+  font-size: 16px;
+  font-weight: 400; }
+
+.contact-now {
+  background: url(/images/bg-cta.jpg);
+  color: #fff !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
 
 /*# sourceMappingURL=style.css.map */
