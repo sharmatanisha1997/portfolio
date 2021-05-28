@@ -22,7 +22,7 @@ router.post('/', function(req, res) {
       details: "Contact request has been submitted successfully"
     }
   }
-  res.redirect('/contact');
+  res.redirect('/');
 });
 
 module.exports = router;

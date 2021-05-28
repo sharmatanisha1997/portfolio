@@ -8,17 +8,13 @@
   <body>
     <%- include('./partials/_header.ejs') %>
     <div class="container">
+        <%- include('./partials/_page-title-badge.ejs') %>
         <div class="row">
-            <div class="col-12 mt-5 mb-5 text-center">
-                <span class="title-badge mx-auto text-center">Contact</span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-12 mx-auto mb-5">
+            <div class="col-sm-6 col-12 mx-auto mb-5 animated" data-effect="bounceInUp">
                 <%- include('./partials/_contact-form.ejs') %>
             </div>
         </div>
     </div>
-    <%- include('./partials/_bootstrap.ejs') %>
+    <%- include('./partials/_footer.ejs') %>
   </body>
 </html>

@@ -19,27 +19,28 @@
   <body>
     <%- include('./partials/_header.ejs') %>
     <div class="container">
+			<%- include('./partials/_page-title-badge.ejs') %>
       <div class="row">
         <div class="col-12">
 					<section class="services flex">
 						<span class="small-title">// OUR SERVICES</span>
-						<h1 class="section-title mb-5">I Offer a Wide <br />Variety of IT Services</h1>
+						<h1 class="section-title mb-5 animated" data-effect="bounceInUp">I Offer a Wide <br />Variety of IT Services</h1>
 						<div class="row flex justify-content-center">
-							<div class="col-12 col-md-4 col-sm-6">
+							<div class="col-12 col-md-4 col-sm-6 animated" data-effect="fadeInLeft">
 								<div class="thumbnail-icon mb-2">
 									<img src="images/monitor.svg" alt="web development" width="80" height="80">
 								</div>
 								<h4>Web Development</h4>
 								<p class="desc">I carry more than just good coding skills. My experience makes me stand out from other web development.</p>
 							</div>
-							<div class="col-12 col-md-4 col-sm-6">
+							<div class="col-12 col-md-4 col-sm-6 animated" data-effect="fadeInDown">
 								<div class="thumbnail-icon mb-2">
 									<img src="images/mobile-phone.svg" alt="web development" width="80" height="80">
 								</div>
 								<h4>Mobile Development</h4>
 								<p class="desc">Create complex enterprise software, ensure reliable software integration, modernise your legacy system.</p>
 							</div>
-							<div class="col-12 col-md-4 col-sm-6">
+							<div class="col-12 col-md-4 col-sm-6 animated" data-effect="fadeInRight">
 								<div class="thumbnail-icon mb-2">
 									<img src="images/ui-design.svg" alt="web development" width="80" height="80">
 								</div>
@@ -50,9 +51,9 @@
 					</section>
 					<section class="services-section flex flex-wrap">
 						<span class="small-title">// IT SERVICES</span>
-						<h1 class="section-title">These are my fantastic skills.</h1>
+						<h1 class="section-title animated mb-4" data-effect="bounceInUp"	>These are my fantastic skills.</h1>
             <div class="row">
-							<div class="col-12 col-md-6 px-5 my-3">
+							<div class="col-12 col-md-6 px-5 my-3 animated" data-effect="fadeInLeft">
 								<span class="serial mb-3">01.</span>
 								<span class="technology mb-3">WordPress</span>
 								<span class="promise-slogan"
@@ -60,7 +61,7 @@
 									solutions.</span
 								>
 							</div>
-							<div class="col-12 col-md-6 px-5 my-3">
+							<div class="col-12 col-md-6 px-5 my-3 animated" data-effect="fadeInRight">
 								<span class="serial mb-3">02.</span>
 								<span class="technology mb-3">Marketo</span>
 								<span class="promise-slogan"
@@ -68,7 +69,7 @@
 									solutions.
 								</span>
 							</div>
-							<div class="col-12 col-md-6 px-5 my-3">
+							<div class="col-12 col-md-6 px-5 my-3 animated" data-effect="fadeInUp">
 								<span class="serial mb-3">03.</span>
 								<span class="technology mb-3">HTML & CSS</span>
 								<span class="promise-slogan"
@@ -76,7 +77,7 @@
 									solutions.
 								</span>
 							</div>
-							<div class="col-12 col-md-6 px-5 my-3">
+							<div class="col-12 col-md-6 px-5 my-3 animated" data-effect="fadeInDown">
 								<span class="serial mb-3">04.</span>
 								<span class="technology mb-3">JavaScript & jQuery</span>
 								<span class="promise-slogan"
@@ -84,7 +85,7 @@
 									solutions.</span
 								>
 							</div>
-							<div class="col-12 col-md-6 px-5 my-3">
+							<div class="col-12 col-md-6 px-5 my-3 animated" data-effect="fadeInLeft">
 								<span class="serial mb-3">05.</span>
 								<span class="technology mb-3">Ruby on Rails</span>
 								<span class="promise-slogan"
@@ -92,7 +93,7 @@
 									solutions.</span
 								>
 							</div>
-							<div class="col-12 col-md-6 px-5 my-3">
+							<div class="col-12 col-md-6 px-5 my-3 animated" data-effect="fadeInRight">
 								<span class="serial mb-3">06.</span>
 								<span class="technology mb-3">Shopify</span>
 								<span class="promise-slogan"
@@ -106,6 +107,6 @@
       </div>
     </div>
     <%- include('./partials/_contact-now.ejs') %>
-    <%- include('./partials/_bootstrap.ejs') %>
+    <%- include('./partials/_footer.ejs') %>
   </body>
 </html>

@@ -1,19 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Tanisha Sharma - Projects created by me</title>
+    <title>Tanisha Sharma - Services we offered by me</title>
     <%- include('./partials/_head.ejs') %>
-    <meta name="Description" content="Tanisha Sharma is a Software Engineering student at Centennial College Progress campus, Scarborough, ON">
-    <meta property="og:title" content="Tanisha Sharma - Projects created by me" />
+    <meta
+      name="Description"
+      content="Tanisha Sharma is a Software Engineering student at Centennial College Progress campus, Scarborough, ON"
+    />
+    <meta
+      property="og:title"
+      content="Tanisha Sharma - Services offered by me"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
-    <link rel="canonical" href="">
+    <link rel="canonical" href="" />
   </head>
   <body>
     <%- include('./partials/_header.ejs') %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <%- include('./partials/_bootstrap.ejs') %>
+    <div class="container">
+      <%- include('./partials/_page-title-badge.ejs') %>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card mb-3 animated" data-effect="fadeInLeft">
+            <img class="card-img-top" src="/images/project.jpeg" alt="Android project">
+            <div class="card-body">
+              <h5 class="card-title">Android project</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+              </p>
+              <div class="technology-badges mb-3">
+                <span class="badge badge-secondary">Java</span>
+                <span class="badge badge-success">Kotlin</span>
+                <span class="badge badge-primary">MySql</span>
+                <span class="badge badge-warning">Sqlite</span>
+              </div>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card mb-3 animated" data-effect="fadeInUp">
+            <img class="card-img-top" src="/images/project.jpeg" alt="Android project">
+            <div class="card-body">
+              <h5 class="card-title">Android project</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+              </p>
+              <div class="technology-badges mb-3">
+                <span class="badge badge-secondary">Java</span>
+                <span class="badge badge-success">Kotlin</span>
+                <span class="badge badge-warning">Sqlite</span>
+              </div>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card mb-3 animated" data-effect="fadeInRight">
+            <img class="card-img-top" src="/images/project.jpeg" alt="Android project">
+            <div class="card-body">
+              <h5 class="card-title">Android project</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+              </p>
+              <div class="technology-badges mb-3">
+                <span class="badge badge-secondary">Java</span>
+                <span class="badge badge-success">Kotlin</span>
+                <span class="badge badge-primary">MySql</span>
+                <span class="badge badge-warning">Sqlite</span>
+                <span class="badge badge-warning">XML</span>
+              </div>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include('./partials/_contact-now.ejs') %> <%-
+    include('./partials/_footer.ejs') %>
   </body>
 </html>

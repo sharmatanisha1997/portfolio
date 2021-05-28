@@ -8,29 +8,25 @@
   <body>
     <%- include('./partials/_header.ejs') %>
     <div class="container">
-        <div class="row">
-            <div class="col-12 mt-5 mb-5 text-center">
-                <span class="title-badge mx-auto text-center">About</span>
-            </div>
-        </div>
+        <%- include('./partials/_page-title-badge.ejs') %>
         <div class="row">
             <div class="col-sm-8 col-12 offset-sm-2">
                 <div class="about-me">
-                    <div class="profile-thumbnail">
+                    <div class="profile-thumbnail animated" data-effect="bounceIn">
                         <img src="/images/tanisha_sharma.jpeg" alt="Tanisha Sharma" width="100%" height="100%"/>
                     </div>
-                    <h1 class="mb-3">Tanisha Sharma</h1>
+                    <h1 class="mb-3 animated" data-effect="fadeInUp">Tanisha Sharma</h1>
                     <span class="decoration-line"></span>
-                    <p class="about-me">
+                    <p class="about-me animated" data-effect="fadeInLeft">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
                 </div>
             </div>
             <div class="col-12 my-5">
-                <a href="/pdfs/resume.pdf" target="_blank" class="btn btn-lg btn-primary mx-auto col-8 offset-2 col-sm-4 offset-sm-4 d-block">My Resume</a>
+                <a href="/pdfs/resume.pdf" target="_blank" class="btn btn-lg btn-primary mx-auto col-8 offset-2 col-sm-4 offset-sm-4 d-block animated" data-effect="fadeInDown">My Resume</a>
             </div>
         </div>
     </div>
-    <%- include('./partials/_bootstrap.ejs') %>
+    <%- include('./partials/_footer.ejs') %>
   </body>
 </html>
