@@ -3,7 +3,8 @@
   box-sizing: border-box; }
 
 body {
-  font: 14px 'Nunito', Helvetica, Arial, sans-serif; }
+  font: 14px 'Nunito', Helvetica, Arial, sans-serif;
+  overflow-x: hidden; }
 
 a {
   color: #00B7FF; }
@@ -14,6 +15,7 @@ header {
 .navbar {
   min-height: 80px;
   width: 100%;
+  padding: 0px 25px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); }
   .navbar .nav-item {
     font-size: 18px; }
@@ -33,10 +35,8 @@ header {
   padding: 15px 50px;
   border-radius: 50px;
   font-size: 40px;
-  letter-spacing: .5px; }
-
-section:first-child {
-  margin-top: 80px; }
+  letter-spacing: .5px;
+  text-transform: capitalize; }
 
 section.landing-screen {
   margin-top: 20px; }
@@ -59,11 +59,13 @@ section.landing-screen {
     text-transform: uppercase; }
 
 section.services-section {
-  margin: 80px auto; }
+  margin-top: 80px; }
 
 section .small-title {
   color: #007bff;
-  font-weight: bold; }
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px; }
 
 section .section-title {
   font-weight: 900; }
@@ -109,6 +111,8 @@ section .promise-slogan {
   color: #fff !important;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  margin-top: 80px;
+  border-radius: 0px; }
 
 /*# sourceMappingURL=style.css.map */
