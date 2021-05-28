@@ -38,21 +38,21 @@ router.post('/', async function(req, res, next) {
       }
       res.redirect('back')
     } else {
-      const html = `
-        Hey Tanisha,<br /><br />
-        You have a contact request from<br/><br/>
-        Name: ${firstname} ${lastname}<br/> 
-        Email: ${email}<br/> 
-        Phone: ${phone}<br/> 
-        Message: ${message}<br/> 
-      `
-      if(process.env.ENABLE_EMAILS){
-        const { message, info } = await sendMail({
-          to: email,
+      if(process.env.ENABLE_EMAILS === "true"){
+        const html = `
+          Hey Tanisha,<br /><br />
+          You have a contact request from<br/><br/>
+          Name: ${firstname} ${lastname}<br/> 
+          Email: ${email}<br/> 
+          Phone: ${phone}<br/> 
+          Message: ${message}<br/> 
+        `
+        const { message: msg, info } = await sendMail({
+          to: process.env.CONTACT_RECEIPIENT_EMAIL,
           subject: "Contact request",
           html,
         })
-        console.log({message,info});
+        console.log({msg,info});
       }
       req.session.message = {
         type: "success",
@@ -62,7 +62,8 @@ router.post('/', async function(req, res, next) {
       res.redirect('/');
     }
   } catch (error) {
-    next(errir)
+    console.log(error);
+    next(error)
   }
 });
 

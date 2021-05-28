@@ -13,6 +13,13 @@ const projectsRouter = require('./routes/projects');
 const servicesRouter = require('./routes/services');
 
 const app = express();
+app.use((req, res, next) => {
+  if (req.header('host').match(/heroku/gi) && req.header('x-forwarded-proto') !== 'https') {
+    res.redirect(`https://${req.header('host')}${req.url}`)
+  } else {
+    next();
+  }
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
