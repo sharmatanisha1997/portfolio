@@ -1,7 +1,16 @@
+/* File name: projects.js
+ * Student's Name: Tanisha Sharma
+ * StudentID: 
+ * Date: 2021/05/28
+ */
 const express = require('express');
 const router = express.Router();
 
-/* GET projects page. */
+/**
+ * @route GET /projects
+ * @author Tanisha Sharma
+ * @returns Render to "projects" view
+ */
 router.get('/', function(req, res, next) {
   res.render('projects', { title: 'Express', page_name: "projects" });
 });

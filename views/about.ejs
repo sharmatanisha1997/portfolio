@@ -4,12 +4,15 @@
     <title>Tanisha Sharma - About me</title>
     <%- include('./partials/_head.ejs') %>
     <meta name="Description" content="Tanisha Sharma is a Software Engineering student at Centennial College Progress campus, Scarborough, ON">
+    <meta property="og:url" content="https://tanisha1.herokuapp.com/about" />
+    <meta property="og:image" content="https://tanisha1.herokuapp.com/images/tanisha_sharma.jpeg" />
   </head>
   <body>
     <%- include('./partials/_header.ejs') %>
     <div class="container">
         <%- include('./partials/_page-title-badge.ejs') %>
         <div class="row">
+            <!-- About me section start -->
             <div class="col-sm-8 col-12 offset-sm-2">
                 <div class="about-me">
                     <div class="profile-thumbnail animated" data-effect="bounceIn">
@@ -22,9 +25,12 @@
                     </p>
                 </div>
             </div>
+            <!-- About me section end -->
+            <!-- Resume link section start -->
             <div class="col-12 my-5">
                 <a href="/pdfs/resume.pdf" target="_blank" class="btn btn-lg btn-primary mx-auto col-8 offset-2 col-sm-4 offset-sm-4 d-block animated" data-effect="fadeInDown">My Resume</a>
             </div>
+            <!-- Resume link section end -->
         </div>
     </div>
     <%- include('./partials/_footer.ejs') %>
