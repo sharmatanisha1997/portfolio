@@ -12,8 +12,21 @@
   </head>
   <body>
     <%- include('./partials/_header.ejs') %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <section class="landing-screen">
+              <div class="thumbnail">
+                <img src="/images/tanisha_sharma.jpeg" alt="Tanisha Sharma" width="100%" height="100%"/>
+              </div>
+              <h4 class="title text-center my-3">Hi, I'm Tanisha 🤟</h4>
+              <h1 class="text-center">Building digital,<br />reliable products and best <br/>user experience</h1>
+              <h5 class="text-center my-4">I'm <strong>Software Engineering</strong> student at Centennial College <br>Progress campus, Scarborough, ON.</h5>
+              <a href="/contact" class="d-block btn btn-lg btn-dark mb-5 mx-auto btn-contact-me">Connect with me</a>
+            </section>
+          </div>
+        </div>
+      </div>
     <%- include('./partials/_bootstrap.ejs') %>
   </body>
 </html>
