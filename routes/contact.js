@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
 
 /* POST contact */
 router.post('/', function(req, res) {
-  const { fullname, email, message } = req.body
-  if(!fullname || !email || !message){
+  const { firstname, lastname, phone, email, message } = req.body
+  if(!firstname || !lastname || !phone || !email || !message){
     req.session.message = {
       type: "danger",
       title: "Action failed",
