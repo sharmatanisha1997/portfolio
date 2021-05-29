@@ -1,6 +1,6 @@
 /* File name: animations.js
  * Student's Name: Tanisha Sharma
- * StudentID: 
+ * StudentID: 301144152
  * Date: 2021/05/28
  */
 const elemToBeAnimated = document.querySelectorAll(".animated")

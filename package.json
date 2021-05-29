@@ -1,7 +1,8 @@
 {
   "name": "portfolio",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
+  "author": "Tanisha Sharma <sharmatanisha1997@gmail.com> (https://tanisha1.herokuapp.com)",
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -16,5 +17,12 @@
     "morgan": "~1.9.1",
     "node-sass-middleware": "0.11.0",
     "nodemailer": "^6.6.1"
-  }
+  },
+  "engines": {
+		"node": "12.19.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sharmatanisha1997/portfolio.git"
+	}
 }
