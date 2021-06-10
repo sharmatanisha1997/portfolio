@@ -5,12 +5,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const logger = require('morgan');
-const sassMiddleware = require('node-sass-middleware');
 const indexRouter = require('./routes/index');
-const aboutRouter = require('./routes/about');
-const contactRouter = require('./routes/contact');
-const projectsRouter = require('./routes/projects');
-const servicesRouter = require('./routes/services');
 
 const app = express();
 app.use((req, res, next) => {
@@ -36,19 +31,10 @@ app.use((req,res,next)=>{
   delete req.session.message
   next()
 })
-app.use(sassMiddleware({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  indentedSyntax: true, // true = .sass and false = .scss
-  sourceMap: true
-}));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/about', aboutRouter);
-app.use('/contact', contactRouter);
-app.use('/projects', projectsRouter);
-app.use('/services', servicesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
