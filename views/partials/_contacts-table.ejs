@@ -1,0 +1,25 @@
+<table class="table table-hover table-sm table-striped table-responsive-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Contact Name</th>
+      <th scope="col">Contact Number</th>
+      <th scope="col">Email Address</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% contacts.forEach(function(contact,index){ %> 
+      <tr>
+        <th scope="row"><%= index+1 %></th>
+        <td><%= contact.name %></td>
+        <td><%= contact.phone %></td>
+        <td><%= contact.email %></td>
+        <td class="d-flex jusitfy-content-center">
+          <a class="btn btn-sm text-primary mr-2" href="/contacts/edit/<%= contact.id %>">&#9998;</a>
+          <a class="btn btn-sm text-danger" href="/contacts/delete/<%= contact.id %>">&#10006;</a>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>

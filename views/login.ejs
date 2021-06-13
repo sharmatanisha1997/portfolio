@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tanisha Sharma - Software Developer</title>
+    <%- include('./partials/_head.ejs') %>
+    <meta
+      name="Description"
+      content="Tanisha Sharma is a Software Engineering student at Centennial College Progress campus, Scarborough, ON"
+    />
+    <meta property="og:url" content="https://tanisha1.herokuapp.com/contact" />
+    <meta
+      property="og:image"
+      content="https://tanisha1.herokuapp.com/images/tanisha_sharma.jpeg"
+    />
+  </head>
+  <body>
+    <%- include('./partials/_header.ejs') %>
+    <div class="container">
+      <%- include('./partials/_page-title-badge.ejs') %>
+      <div class="row">
+        <div
+          class="col-sm-8 col-md-6 col-12 mx-auto animated"
+          data-effect="bounceInUp"
+        >
+        <!-- Login form card start -->
+          <div class="card p-5">
+            <form
+              action="/login"
+              method="post"
+              class="needs-validation"
+              novalidate
+            >
+              <div class="form-row">
+                <div class="col-12 mb-3">
+                  <label for="username">Username</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="username"
+                    id="username"
+                    placeholder="Your username"
+                    required
+                  />
+                  <div class="invalid-tooltip">
+                    Please input the required field.
+                  </div>
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="password">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    id="password"
+                    placeholder="Your password"
+                    required
+                  />
+                  <div class="invalid-tooltip">Please input the required field.</div>
+                </div>
+              </div>
+              <button class="btn btn-primary mx-auto text-center" type="submit">
+                Login
+              </button>
+            </form>
+          </div>
+        <!-- Login form card end -->
+        </div>
+      </div>
+    </div>
+    <%- include('./partials/_footer.ejs') %>
+  </body>
+</html>

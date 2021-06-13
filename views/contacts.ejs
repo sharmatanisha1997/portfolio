@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tanisha Sharma - Software Developer</title>
+    <%- include('./partials/_head.ejs') %>
+    <meta
+      name="Description"
+      content="Tanisha Sharma is a Software Engineering student at Centennial College Progress campus, Scarborough, ON"
+    />
+    <meta property="og:title" content="Tanisha Sharma - Software Developer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tanisha1.herokuapp.com" />
+    <meta
+      property="og:image"
+      content="https://tanisha1.herokuapp.com/images/tanisha_sharma.jpeg"
+    />
+    <link rel="canonical" href="https://tanisha1.herokuapp.com" />
+  </head>
+  <body>
+    <%- include('./partials/_header.ejs') %>
+    <div class="container">
+      <%- include('./partials/_page-title-badge.ejs') %>
+      <div class="row">
+        <% if(view_type==="all_contacts") { %>
+          <!-- View all business contacts and new contact CTA start -->
+            <div
+              class="col-12 mx-auto mb-5 animated"
+              data-effect="bounceInUp"
+            >
+              <a class="btn btn-primary btn-sm float-right mb-3" href="/contacts/create">+ New</a>
+              <%- include('./partials/_contacts-table.ejs') %> 
+            </div>
+          <!-- View all business contacts and new contact CTA end -->
+        <% } else if(view_type.match(/(create|edit)/gi)) { %>
+          <!-- Create or Edit contact form start -->
+            <div
+              class="col-sm-6 col-12 mx-auto mb-5 animated"
+              data-effect="bounceInUp"
+            >
+              <%- include('./partials/_contacts-form.ejs') %>
+            </div>
+          <!-- Create or Edit contact form end -->
+        <% } -%>
+      </div>
+    </div>
+    <%- include('./partials/_footer.ejs') %>
+  </body>
+</html>
