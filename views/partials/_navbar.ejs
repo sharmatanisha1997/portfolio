@@ -24,9 +24,9 @@
         <a href="/contact" class="nav-link pr-0">Contact</a>
       </li>
       <% if(!is_logged_in) { %>
-        <li class="<%= page_name === 'login' && 'active' %> nav-item ml-2">
+        <!-- <li class="<%= page_name === 'login' && 'active' %> nav-item ml-2">
           <a href="/login" class="nav-link">Login</a>
-        </li>
+        </li> -->
         <% } else if(is_logged_in) { %>
           <li class="<%= page_name === 'contacts' && 'active' %> nav-item mx-2">
             <a href="/contacts" class="nav-link pr-0">Contacts</a>

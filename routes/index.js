@@ -71,6 +71,12 @@ router.post("/contact", async function (req, res, next) {
       };
       res.redirect("back");
     } else {
+      await Contacts.create({
+        name: `${firstname} ${lastname}`,
+        phone,
+        email,
+        message
+      });
       req.session.message = {
         type: "success",
         title: "Success",
@@ -79,7 +85,6 @@ router.post("/contact", async function (req, res, next) {
       res.redirect("/");
     }
   } catch (error) {
-    console.log(error);
     next(error);
   }
 });
@@ -141,7 +146,7 @@ router.post("/login", async function (req, res, next) {
       hasError = true;
       errorMessage = "Required parameters are missing";
     } else {
-      user = await Users.findOne({ username });
+      user = await Users.findOne({ username: { $regex: new RegExp(`^${username.toLowerCase()}$`, "i") }  });
       if (!user) {
         hasError = true;
         errorMessage = "User doesn't exists";
@@ -166,7 +171,6 @@ router.post("/login", async function (req, res, next) {
       res.redirect("back");
     }
   } catch (error) {
-    console.log(error);
     next(error);
   }
 });
@@ -228,15 +232,17 @@ router.get("/contacts/create", checkAuth, async function (req, res, next) {
  * @param {string} name.body.required - name
  * @param {string} phone.body.required - phone
  * @param {string} email.body.required - email
+ * @param {string} message.body - message
  * @returns Redirects to "/contacts"
  */
 router.post("/contacts", checkAuth, async function (req, res, next) {
   try {
-    const { name, phone, email } = req.body;
+    const { name, phone, email, message = "" } = req.body;
     await Contacts.create({
       name,
       phone,
       email,
+      message
     });
     req.session.message = {
       type: "success",
@@ -278,16 +284,18 @@ router.get("/contacts/edit/:id", checkAuth, async function (req, res, next) {
  * @param {string} name.body.required - name
  * @param {string} phone.body.required - phone
  * @param {string} email.body.required - email
+ * @param {string} message.body - message
  * @returns Redirects to "/contacts"
  */
 router.post("/contacts/edit/:id", checkAuth, async function (req, res, next) {
   try {
-    const { name, phone, email } = req.body;
+    const { name, phone, email, message = "" } = req.body;
     await Contacts.findByIdAndUpdate(req.params.id, {
       $set: {
         name,
         phone,
         email,
+        message
       },
     });
     req.session.message = {
@@ -327,7 +335,7 @@ function checkAuth(req, res, next) {
   } else {
     req.session.message = {
       type: "danger",
-      title: "Action denied",
+      title: "Access denied",
       details: "Please login first",
     };
     res.redirect("/login");
