@@ -1,5 +1,10 @@
-require("./models/contacts");
-require("./models/users");
+/* File name: connectDatabase.js
+ * Student's Name: Tanisha Sharma
+ * StudentID: 301144152
+ * Date: 2021/06/16
+ */
+require("../models/contacts");
+require("../models/users");
 const mongoose = require("mongoose")
 
 module.exports = function (uri) {

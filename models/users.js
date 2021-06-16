@@ -1,4 +1,11 @@
+/* File name: users.js
+ * Student's Name: Tanisha Sharma
+ * StudentID: 301144152
+ * Date: 2021/06/16
+ */
+
 const mongoose = require('mongoose')
+const bcrypt = require('bcryptjs')
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -28,5 +35,13 @@ const userSchema = new mongoose.Schema({
         required: false
     }
 })
+
+userSchema.methods.encryptPassword = function(password){
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null)
+}
+  
+userSchema.methods.decryptPassword = function(password){
+    return bcrypt.compareSync(password, this.password)
+}
 
 module.exports = mongoose.model("user",userSchema)

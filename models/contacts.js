@@ -1,3 +1,9 @@
+/* File name: contacts.js
+ * Student's Name: Tanisha Sharma
+ * StudentID: 301144152
+ * Date: 2021/06/16
+ */
+
 const mongoose = require('mongoose')
 
 const contactSchema = new mongoose.Schema({

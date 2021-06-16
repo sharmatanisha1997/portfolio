@@ -6,14 +6,18 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const logger = require("morgan");
 const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const contactMeRouter = require("./routes/contactMe");
+const contactsRouter = require("./routes/contacts");
 const MongoStore = require("connect-mongo");
-const connectToDatabase = require("./connectDatabase");
+const passport = require('passport')
+const connectToDatabase = require("./services/connectDatabase");
 
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 const uri = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`;
-console.log(uri);
 
 connectToDatabase(uri);
+require('./passport/passportLocal.js')
 
 const sessionStore = MongoStore.create({
   mongoUrl: uri,
@@ -53,6 +57,8 @@ app.use(
     store: sessionStore
   })
 );
+app.use(passport.initialize())
+app.use(passport.session())
 // Flash messages middleware
 app.use((req, res, next) => {
   res.locals.message = req.session.message;
@@ -62,7 +68,24 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, "public")));
 
+
+function checkAuth(req, res, next) {
+  if (req.isAuthenticated()) {
+    next();
+  } else {
+    req.session.message = {
+      type: "danger",
+      title: "Access denied",
+      details: "Please login first",
+    };
+    res.redirect("/login");
+  }
+}
+
 app.use("/", indexRouter);
+app.use("/", usersRouter);
+app.use("/contacts", checkAuth, contactsRouter);
+app.use("/contact", contactMeRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
