@@ -121,6 +121,7 @@ router.get("/services", function (req, res, next) {
  * @returns Render to "login" view
  */
 router.get("/login", function (req, res, next) {
+  if(req.session.is_logged_in) res.redirect("/contacts")
   res.render("login", {
     page_name: "login",
     is_logged_in: req.session.is_logged_in,

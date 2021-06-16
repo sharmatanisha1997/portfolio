@@ -6,7 +6,23 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const logger = require("morgan");
 const indexRouter = require("./routes/index");
-require("./connectDatabase");
+const MongoStore = require("connect-mongo");
+const connectToDatabase = require("./connectDatabase");
+
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+const uri = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`;
+console.log(uri);
+
+connectToDatabase(uri);
+
+const sessionStore = MongoStore.create({
+  mongoUrl: uri,
+  ttl: 14 * 24 * 60 * 60,
+  crypto: {
+    secret: process.env.SECRET,
+  },
+  collectionName: "sessions",
+});
 
 const app = express();
 app.use((req, res, next) => {
@@ -34,6 +50,7 @@ app.use(
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
+    store: sessionStore
   })
 );
 // Flash messages middleware
